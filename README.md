@@ -1,16 +1,53 @@
-# flutter_clean_app
+# Counter App
 
-A new Flutter project.
+Una aplicación Flutter minimalista y limpia para contar, con historial y arquitectura Clean Architecture.
 
-## Getting Started
+## Características
 
-This project is a starting point for a Flutter application.
+- **Contador**: Incrementa, decrementa y reinicia el valor del contador.
+- **Historial**: Cada acción se guarda con fecha y hora, mostrándose en una lista con scroll automático.
+- **Animaciones**: Los valores del contador y los botones tienen animaciones suaves usando Animate Do.
+- **Gestión de estado**: Implementada con Riverpod y generación automática de providers.
+- **Cambio de tema**: Soporte para tema claro, oscuro y sistema.
+- **Arquitectura limpia**: Separación en carpetas `app`, `config`, y `features`, siguiendo buenas prácticas.
 
-A few resources to get you started if this is your first Flutter project:
+## Estructura del proyecto
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```
+lib/
+├── app/
+├── config/
+│   ├── theme/
+│   ├── utils/
+│   └── router/
+└── features/
+    └── counter/
+        ├── domain/
+        ├── data/
+        └── presentation/
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Instalación y ejecución
+
+1. Clona el repositorio:
+   ```sh
+   git clone https://github.com/MatiVMutte/counter_app.git
+   ```
+2. Instala dependencias:
+   ```sh
+   flutter pub get
+   ```
+3. Genera archivos necesarios:
+   ```sh
+   flutter pub run build_runner build --delete-conflicting-outputs
+   ```
+4. Corre la app:
+   ```sh
+   flutter run
+   ```
+
+## Autor
+- [MatiVMutte](https://github.com/MatiVMutte)
+
+---
+¡Disfruta programando con Flutter y Riverpod!
