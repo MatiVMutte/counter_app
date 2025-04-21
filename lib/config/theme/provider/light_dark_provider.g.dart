@@ -6,7 +6,7 @@ part of 'light_dark_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$lightDarkHash() => r'd3bf61ef19782612a6015abef5948480bd3d5e2b';
+String _$lightDarkHash() => r'432deae22022ac899bb37dbc43971d11d1d29428';
 
 /// See also [LightDark].
 @ProviderFor(LightDark)

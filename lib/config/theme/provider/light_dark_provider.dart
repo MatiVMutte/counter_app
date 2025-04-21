@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_clean_app/config/utils/local_storage.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -11,8 +10,8 @@ class LightDark extends _$LightDark {
   final String _key = 'theme_mode';
 
   @override
-  FutureOr<ThemeMode> build() {
-    return getTheme();
+  FutureOr<ThemeMode> build() async {
+    return await getTheme();
   }
 
   Future<ThemeMode> getTheme() async {
@@ -27,7 +26,12 @@ class LightDark extends _$LightDark {
   }
 
   void setTheme(ThemeMode theme) {
-    LocalStorage().setValue(_key, theme.toString());
+    final stringValue = theme == ThemeMode.dark
+        ? 'dark'
+        : theme == ThemeMode.light
+            ? 'light'
+            : 'system';
+    LocalStorage().setValue(_key, stringValue);
     state = AsyncValue.data(theme);
   }
 }
